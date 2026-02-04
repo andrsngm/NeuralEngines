@@ -23,24 +23,22 @@
             background-color: var(--dark-bg);
             color: var(--text-light);
             line-height: 1.6;
-            overflow-x: hidden; /* Evita scroll horizontal */
+            overflow-x: hidden;
         }
 
-        /* Utilidades */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         .text-center { text-align: center; }
-        .py-5 { padding: 80px 0; }
 
         /* Header */
         header {
             background-color: var(--secondary-color);
             padding: 20px 0;
             border-bottom: 2px solid var(--primary-color);
-            box-shadow: 0 0 15px rgba(0, 230, 118, 0.3); /* Resplandor neón */
+            box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -63,57 +61,75 @@
             text-decoration: none;
             margin-left: 30px;
             font-size: 1.1rem;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            transition: 0.3s;
         }
         .nav-links a:hover {
             color: var(--primary-color);
             text-shadow: 0 0 8px rgba(0, 230, 118, 0.7);
         }
 
-        /* Hero Section */
+        /* Hero Section REFORMADA */
         .hero {
-            background: url('https://via.placeholder.com/1920x800/0f2027/2c5364?text=FUTURISTIC+GAMING+BACKGROUND') no-repeat center center/cover; /* Fondo futurista */
+            background: linear-gradient(rgba(13, 26, 42, 0.8), rgba(13, 26, 42, 0.8)), 
+                        url('https://via.placeholder.com/1920x800/0f2027/2c5364?text=FUTURISTIC+BACKGROUND');
+            background-size: cover;
             min-height: 600px;
             display: flex;
             align-items: center;
-            position: relative;
-            z-index: 1;
+            padding: 60px 0;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen */
-            z-index: -1;
+        
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
         }
+
+        .hero-video {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .video-element {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 15px;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 30px rgba(0, 230, 118, 0.4);
+            background: #000;
+        }
+
+        .hero-content {
+            flex: 1;
+            text-align: left;
+        }
+
         .hero-content h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(0, 230, 118, 0.8);
-            line-height: 1.2;
+            text-shadow: 0 0 20px rgba(0, 230, 118, 0.5);
+            line-height: 1.1;
         }
+
         .hero-content p {
-            font-size: 1.3rem;
-            color: var(--text-light);
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            color: var(--text-light);
         }
+
         .btn-primary {
             background: var(--gradient-1);
             color: var(--dark-bg);
             padding: 15px 35px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: 0.3s;
             box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
             display: inline-block;
         }
@@ -122,147 +138,58 @@
             box-shadow: 0 0 25px rgba(0, 230, 118, 0.8);
         }
 
-        /* Features Section (Para resaltar tu software) */
-        .features {
-            background-color: var(--dark-bg);
-            padding: 100px 0;
-        }
+        /* Features Section */
+        .features { padding: 80px 0; }
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             margin-top: 50px;
         }
         .feature-item {
             background-color: var(--secondary-color);
             padding: 30px;
             border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0, 230, 118, 0.2);
+            transition: 0.3s;
         }
-        .feature-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(0, 230, 118, 0.5);
-        }
-        .feature-item h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        .feature-item p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
+        .feature-item:hover { transform: translateY(-10px); box-shadow: 0 0 20px rgba(0, 230, 118, 0.3); }
+        .feature-item h3 { font-family: 'Orbitron', sans-serif; color: var(--primary-color); }
 
-        /* Product Cards Section */
-        .products {
-            background-color: var(--dark-bg);
-            padding: 100px 0;
-            border-top: 1px solid rgba(0, 230, 118, 0.1);
-        }
-        .products h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 60px;
-            text-shadow: 0 0 15px rgba(0, 230, 118, 0.7);
-        }
+        /* Products Section */
+        .products { padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.1); }
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            margin-top: 50px;
         }
         .product-card {
             background-color: var(--secondary-color);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0, 230, 118, 0.2);
+            transition: 0.3s;
         }
-        .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 10px 30px rgba(0, 230, 118, 0.7);
-        }
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 2px solid var(--primary-color);
-        }
-        .product-info {
-            padding: 25px;
-            text-align: center;
-        }
-        .product-info h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        .product-info p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-        .product-price {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
-        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 230, 118, 0.4); }
+        .product-image { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--primary-color); }
+        .product-info { padding: 25px; text-align: center; }
+        .product-price { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; color: var(--primary-color); margin: 15px 0; }
         .btn-buy-product {
-            background: var(--gradient-1);
-            color: var(--dark-bg);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
-            display: inline-block;
-        }
-        .btn-buy-product:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px rgba(0, 230, 118, 0.6);
+            background: var(--gradient-1); color: var(--dark-bg); padding: 12px 25px;
+            text-decoration: none; border-radius: 5px; font-weight: 700; display: inline-block;
         }
 
         /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            padding: 40px 0;
-            text-align: center;
-            border-top: 2px solid var(--primary-color);
-            margin-top: 50px;
-        }
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
+        footer { padding: 40px 0; background: var(--secondary-color); border-top: 2px solid var(--primary-color); text-align: center; }
 
-        /* Responsive Design */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; }
-            .nav-links { margin-top: 20px; }
-            .nav-links a { margin: 0 15px; display: block; margin-bottom: 10px; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-content p { font-size: 1rem; }
-            .btn-primary { padding: 12px 25px; font-size: 1rem; }
-            .features, .products { padding: 60px 0; }
-            .feature-grid, .product-grid { grid-template-columns: 1fr; }
+            .hero-layout { flex-direction: column; text-align: center; }
+            .hero-content { text-align: center; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .navbar { flex-direction: column; gap: 15px; }
+            .nav-links a { margin: 0 10px; }
         }
     </style>
 </head>
@@ -278,29 +205,38 @@
         </div>
     </header>
 
-    <section class="hero text-center">
-        <div class="container hero-content">
-            <h1>Desbloquea el Futuro con NeuralEngines</h1>
-            <p>Obtén acceso instantáneo a software de vanguardia, licencias exclusivas y herramientas que potenciarán tu experiencia gaming y tecnológica. Entrega automática 24/7.</p>
-            <a href="#products" class="btn-primary">Explorar Productos</a>
+    <section class="hero">
+        <div class="container hero-layout">
+            <div class="hero-video">
+                <video autoplay muted loop playsinline class="video-element">
+                    <source src="nombre_de_tu_video.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+            </div>
+
+            <div class="hero-content">
+                <h1>Desbloquea el Futuro con NeuralEngines</h1>
+                <p>Obtén acceso instantáneo a software de vanguardia, licencias exclusivas y herramientas que potenciarán tu experiencia tecnológica. Entrega automática 24/7.</p>
+                <a href="#products" class="btn-primary">Explorar Productos</a>
+            </div>
         </div>
     </section>
 
     <section id="features" class="features text-center">
         <div class="container">
-            <h2>¿Por qué elegir NeuralEngines?</h2>
+            <h2 style="font-family: 'Orbitron'; font-size: 2.5rem; color: var(--primary-color);">¿Por qué elegirnos?</h2>
             <div class="feature-grid">
                 <div class="feature-item">
                     <h3>Entrega Instantánea</h3>
-                    <p>Recibe tus licencias al instante por correo electrónico, en cualquier momento del día o la noche.</p>
+                    <p>Recibe tus licencias al instante por correo electrónico tras el pago.</p>
                 </div>
                 <div class="feature-item">
                     <h3>Pagos Seguros</h3>
-                    <p>Compra con confianza usando tarjeta, PayPal o criptomonedas. Transacciones protegidas y anónimas.</p>
+                    <p>Soportamos Tarjetas, PayPal y Criptomonedas de forma anónima.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Soporte Dedicado</h3>
-                    <p>Nuestro equipo está listo para ayudarte con cualquier consulta o problema que puedas tener.</p>
+                    <h3>Soporte 24/7</h3>
+                    <p>Nuestro equipo técnico está listo para ayudarte en cualquier momento.</p>
                 </div>
             </div>
         </div>
@@ -308,33 +244,33 @@
 
     <section id="products" class="products text-center">
         <div class="container">
-            <h2>Nuestras Soluciones de Software</h2>
+            <h2 style="font-family: 'Orbitron'; font-size: 2.5rem; color: var(--primary-color);">Soluciones de Software</h2>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/400x200/0f2027/00e676?text=LICENCIA+PRO" alt="Licencia Pro Software" class="product-image">
+                    <img src="https://via.placeholder.com/400x200/0f2027/00e676?text=LICENCIA+PRO" class="product-image">
                     <div class="product-info">
-                        <h3>Licencia Pro Gamer Suite</h3>
-                        <p>Desbloquea todo el potencial con nuestra suite definitiva para optimización de juegos y herramientas exclusivas.</p>
-                        <div class="product-price">$29.99 USD</div>
-                        <a href="TU_LINK_DE_SHOPPY_PRODUCTO_1_AQUI" class="btn-buy-product">Comprar Ahora</a>
+                        <h3>Licencia Pro Gamer</h3>
+                        <p>Suite definitiva para optimización y herramientas exclusivas.</p>
+                        <div class="product-price">$29.99</div>
+                        <a href="TU_LINK_SHOPPY_1" class="btn-buy-product">Comprar Ahora</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/400x200/0f2027/00b8d4?text=HERRAMIENTA+IA" alt="Herramienta IA Avanzada" class="product-image">
+                    <img src="https://via.placeholder.com/400x200/0f2027/00b8d4?text=HERRAMIENTA+IA" class="product-image">
                     <div class="product-info">
-                        <h3>Herramienta de Productividad IA</h3>
-                        <p>Automatiza tareas complejas y mejora tu eficiencia con nuestra avanzada herramienta potenciada por IA.</p>
-                        <div class="product-price">$19.99 USD</div>
-                        <a href="TU_LINK_DE_SHOPPY_PRODUCTO_2_AQUI" class="btn-buy-product">Comprar Ahora</a>
+                        <h3>IA Productivity Tool</h3>
+                        <p>Automatiza tareas complejas con nuestra herramienta de IA.</p>
+                        <div class="product-price">$19.99</div>
+                        <a href="TU_LINK_SHOPPY_2" class="btn-buy-product">Comprar Ahora</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/400x200/0f2027/6200ea?text=MOD+DEFINITIVO" alt="Mod definitivo" class="product-image">
+                    <img src="https://via.placeholder.com/400x200/0f2027/6200ea?text=MOD+PACK" class="product-image">
                     <div class="product-info">
-                        <h3>Pack de Utilidades Gaming</h3>
-                        <p>Una colección esencial de utilidades y mods para llevar tu experiencia de juego al siguiente nivel.</p>
-                        <div class="product-price">$14.99 USD</div>
-                        <a href="TU_LINK_DE_SHOPPY_PRODUCTO_3_AQUI" class="btn-buy-product">Comprar Ahora</a>
+                        <h3>Gaming Utility Pack</h3>
+                        <p>Colección esencial de utilidades para usuarios avanzados.</p>
+                        <div class="product-price">$14.99</div>
+                        <a href="TU_LINK_SHOPPY_3" class="btn-buy-product">Comprar Ahora</a>
                     </div>
                 </div>
             </div>
@@ -344,9 +280,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 NeuralEngines. Todos los derechos reservados.</p>
-            <div>
-                <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a>
-            </div>
+            <p><a href="#">Privacidad</a> | <a href="#">Términos</a></p>
         </div>
     </footer>
 </body>
