@@ -6,221 +6,143 @@
     <title>Neural Engines - Tu Destino para Software de Vanguardia</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #00e676; /* Verde neón */
-            --secondary-color: #1a2a3a; /* Azul oscuro */
-            --dark-bg: #0d1a2a; /* Fondo muy oscuro */
-            --text-light: #e0f2f1; /* Texto claro */
-            --text-muted: #8892b0; /* Texto secundario */
-            --gradient-1: linear-gradient(90deg, #00e676 0%, #00b8d4 100%);
-            --gradient-2: linear-gradient(90deg, #6200ea 0%, #aa00ff 100%);
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .text-center { text-align: center; }
-
-        /* Header */
-        header {
-            background-color: var(--secondary-color);
-            padding: 20px 0;
-            border-bottom: 2px solid var(--primary-color);
-            box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            text-shadow: 0 0 10px rgba(0, 230, 118, 0.7);
-        }
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--primary-color);
-            text-shadow: 0 0 8px rgba(0, 230, 118, 0.7);
-        }
-
-        /* Hero Section REFORMADA */
-        .hero {
-            background: linear-gradient(rgba(13, 26, 42, 0.8), rgba(13, 26, 42, 0.8)), 
-                        url('https://via.placeholder.com/1920x800/0f2027/2c5364?text=FUTURISTIC+BACKGROUND');
-            background-size: cover;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            padding: 60px 0;
-        }
-        
-        .hero-layout {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-        }
-
-        .hero-video {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .video-element {
-            width: 100%;
-            max-width: 550px;
-            border-radius: 15px;
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 0 30px rgba(0, 230, 118, 0.4);
-            background: #000;
-        }
-
-        .hero-content {
-            flex: 1;
-            text-align: left;
-        }
-
-        .hero-content h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(0, 230, 118, 0.5);
-            line-height: 1.1;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--text-light);
-        }
-
-        .btn-primary {
-            background: var(--gradient-1);
-            color: var(--dark-bg);
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
-            display: inline-block;
-        }
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 230, 118, 0.8);
-        }
-
-        /* Features Section */
-        .features { padding: 80px 0; }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        .feature-item {
-            background-color: var(--secondary-color);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 230, 118, 0.2);
-            transition: 0.3s;
-        }
-        .feature-item:hover { transform: translateY(-10px); box-shadow: 0 0 20px rgba(0, 230, 118, 0.3); }
-        .feature-item h3 { font-family: 'Orbitron', sans-serif; color: var(--primary-color); }
-
-        /* Products Section */
-        .products { padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.1); }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-        .product-card {
-            background-color: var(--secondary-color);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(0, 230, 118, 0.2);
-            transition: 0.3s;
-        }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 230, 118, 0.4); }
-        .product-image { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--primary-color); }
-        .product-info { padding: 25px; text-align: center; }
-        .product-price { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; color: var(--primary-color); margin: 15px 0; }
-        .btn-buy-product {
-            background: var(--gradient-1); color: var(--dark-bg); padding: 12px 25px;
-            text-decoration: none; border-radius: 5px; font-weight: 700; display: inline-block;
-        }
-
-        /* Footer */
-        footer { padding: 40px 0; background: var(--secondary-color); border-top: 2px solid var(--primary-color); text-align: center; }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero-layout { flex-direction: column; text-align: center; }
-            .hero-content { text-align: center; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .navbar { flex-direction: column; gap: 15px; }
-            .nav-links a { margin: 0 10px; }
-
-}
-            .custom-notification {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #1a1a1a;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #00ffcc; /* Color verde neón de tu logo */
-    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
-    display: flex;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       :root {
+    --primary-color: #00e676; /* Verde neón */
+    --secondary-color: #1a2a3a; /* Azul oscuro */
+    --dark-bg: #0d1a2a; /* Fondo muy oscuro */
+    --text-light: #e0f2f1;
+    --text-muted: #8892b0;
+    --gradient-1: linear-gradient(90deg, #00e676 0%, #00b8d4 100%);
+    --gradient-2: linear-gradient(90deg, #6200ea 0%, #aa00ff 100%);
+    --neon-glow: 0 0 15px rgba(0, 230, 118, 0.4);
 }
 
-.hidden { opacity: 0; transform: translateY(20px); pointer-events: none; }
+/* --- BASICS --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0; padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.text-center { text-align: center; }
+
+/* --- HEADER & NAV --- */
+header {
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem; font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(0, 230, 118, 0.7);
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none; margin-left: 30px;
+    font-size: 1.1rem; transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary-color); text-shadow: var(--neon-glow); }
+
+/* --- HERO SECTION --- */
+.hero {
+    background: linear-gradient(rgba(13, 26, 42, 0.85), rgba(13, 26, 42, 0.85)), 
+                url('https://via.placeholder.com/1920x800/0f2027/2c5364?text=FUTURISTIC+BACKGROUND');
+    background-size: cover; background-position: center;
+    min-height: 600px; display: flex; align-items: center; padding: 60px 0;
+}
+
+.hero-layout { display: flex; align-items: center; justify-content: space-between; gap: 50px; width: 100%; }
+.hero-video { flex: 1; display: flex; justify-content: center; }
+
+.video-element {
+    width: 100%; max-width: 550px;
+    border-radius: 15px; border: 2px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(0, 230, 118, 0.4); background: #000;
+}
+
+.hero-content { flex: 1; text-align: left; }
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif; font-size: 3rem;
+    color: var(--primary-color); margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 230, 118, 0.5); line-height: 1.1;
+}
+
+.btn-primary {
+    background: var(--gradient-1); color: var(--dark-bg);
+    padding: 15px 35px; text-decoration: none; border-radius: 5px;
+    font-size: 1.1rem; font-weight: 700; transition: 0.3s;
+    box-shadow: var(--neon-glow); display: inline-block;
+}
+
+.btn-primary:hover { transform: translateY(-5px); box-shadow: 0 0 25px rgba(0, 230, 118, 0.8); }
+
+/* --- FEATURES & PRODUCTS --- */
+.features, .products { padding: 80px 0; }
+.feature-grid, .product-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; margin-top: 50px;
+}
+
+.feature-item, .product-card {
+    background-color: var(--secondary-color); padding: 30px;
+    border-radius: 10px; border: 1px solid rgba(0, 230, 118, 0.2); transition: 0.3s;
+}
+
+.product-card { padding: 0; overflow: hidden; }
+.product-image { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--primary-color); }
+.product-info { padding: 25px; text-align: center; }
+.product-price { font-family: 'Orbitron'; font-size: 1.8rem; color: var(--primary-color); margin: 15px 0; }
+
+.btn-buy-product {
+    background: var(--gradient-1); color: var(--dark-bg); padding: 12px 25px;
+    text-decoration: none; border-radius: 5px; font-weight: 700; display: inline-block;
+}
+
+/* --- SOCIAL PROOF NOTIFICATION --- */
+.custom-notification {
+    position: fixed; bottom: 20px; left: 20px;
+    background: #1a1a1a; color: white; padding: 15px;
+    border-radius: 10px; border: 1px solid #00ffcc;
+    box-shadow: 0 4px 20px rgba(0, 255, 204, 0.3);
+    display: flex; align-items: center; z-index: 9999;
+    transition: all 0.5s ease; width: 320px;
+    font-family: sans-serif;
+}
+
+.hidden { opacity: 0; transform: translateY(30px); pointer-events: none; }
 .notification-content { display: flex; align-items: center; gap: 12px; }
-
 .notification-img img { border-radius: 50%; width: 45px; height: 45px; background: #333; }
-
-.notification-text p { margin: 0; font-size: 14px; }
-#notif-title { font-weight: bold; color: #00ffcc; }
+.notification-text p { margin: 0; font-size: 13px; }
+#notif-title { font-weight: bold; color: #00ffcc; display: block; }
 #notif-time { font-size: 10px; color: #888; text-transform: uppercase; }
+.close-notif { background: none; border: none; color: #555; cursor: pointer; margin-left: auto; font-size: 20px; }
 
-.close-notif { background: none; border: none; color: #555; cursor: pointer; margin-left: 10px; }
-        
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .hero-layout { flex-direction: column; text-align: center; }
+    .hero-content { text-align: center; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .navbar { flex-direction: column; gap: 15px; }
+    .nav-links a { margin: 0 10px; }
+    
+    .custom-notification {
+        left: 5%; right: 5%; width: 90%; bottom: 20px;
+    }
+}
     </style>
 </head>
 <body>
