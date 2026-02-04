@@ -310,6 +310,37 @@
 }
 
 
+
+.custom-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #1a1a1a;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #00ffcc; /* Color verde neón de tu logo */
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hidden { opacity: 0; transform: translateY(20px); pointer-events: none; }
+
+.notification-content { display: flex; align-items: center; gap: 12px; }
+
+.notification-img img { border-radius: 50%; width: 45px; height: 45px; background: #333; }
+
+.notification-text p { margin: 0; font-size: 14px; }
+#notif-title { font-weight: bold; color: #00ffcc; }
+#notif-time { font-size: 10px; color: #888; text-transform: uppercase; }
+
+.close-notif { background: none; border: none; color: #555; cursor: pointer; margin-left: 10px; }
+
+
         
     </style>
 </head>
@@ -334,19 +365,12 @@
         </div>
 
         <div class="hero-content">
-            <h1>Desbloquea el Futuro con NeuralEngines</h1>
+            <h1>Desbloquea el Futuro con Neural Engines</h1>
             <p>Acceso instantáneo a software de vanguardia y licencias exclusivas. Tecnología diseñada para dominar el juego.</p>
             <a href="#products" class="btn-primary">Explorar Productos</a>
         </div>
     </div>
 </section>
-    <section class="hero text-center">
-        <div class="container hero-content">
-            <h1>Desbloquea el Futuro con Neural Engines</h1>
-            <p>Obtén acceso instantáneo a software de vanguardia, licencias exclusivas y herramientas que potenciarán tu experiencia gaming y tecnológica. Entrega automática 24/7.</p>
-            <a href="#products" class="btn-primary">Explorar Productos</a>
-        </div>
-    </section>
 
     <section id="features" class="features text-center">
         <div class="container">
@@ -411,5 +435,52 @@
             </div>
         </div>
     </footer>
+
+
+<div id="social-proof" class="custom-notification hidden">
+    <div class="notification-content">
+        <div class="notification-img">
+            <img src="https://via.placeholder.com/50" alt="Neural Engines Logo" id="notif-icon">
+        </div>
+        <div class="notification-text">
+            <p id="notif-title">Nueva activación</p>
+            <p id="notif-desc">Alguien en <b>CDMX</b> acaba de adquirir una licencia Pro.</p>
+            <span id="notif-time">Hace 2 minutos</span>
+        </div>
+    </div>
+    <button class="close-notif">&times;</button>
+</div>
+
+
+
+<script>
+       const notifications = [
+    { city: "Madrid", product: "Licencia Vision AI", time: "Hace 5 min" },
+    { city: "Santiago", product: "Motor de Detección", time: "Hace 12 min" },
+    { city: "Miami", product: "Pack Neural Pro", time: "Hace 2 min" },
+    { city: "Bogotá", product: "Soporte Enterprise", time: "Hace 45 min" }
+];
+
+function showNotification() {
+    const notif = document.getElementById('social-proof');
+    const data = notifications[Math.floor(Math.random() * notifications.length)];
+
+    document.getElementById('notif-desc').innerHTML = `Alguien en <b>${data.city}</b> ha activado <b>${data.product}</b>.`;
+    document.getElementById('notif-time').innerText = data.time;
+
+    notif.classList.remove('hidden');
+
+    // Ocultar después de 6 segundos
+    setTimeout(() => {
+        notif.classList.add('hidden');
+    }, 6000);
+}
+
+// Iniciar el ciclo (aparece cada 15-30 segundos)
+setInterval(showNotification, 20000);
+    </script>
+
+
+    
 </body>
 </html>
